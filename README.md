@@ -4,3 +4,7 @@
 
 - Node.js
 - Backend
+- API
+- Authorization
+- FTP (file transfering)
+- Jest test
