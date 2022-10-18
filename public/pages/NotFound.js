@@ -1,8 +1,7 @@
-class NotFound{
-    constructor(){
-    }
+import { PageTemplate } from "../../lib/PageTemplate.js";
 
-    getPage(){
+class NotFound extends PageTemplate{
+    contentHTML(){
         return `<h1>404 code</h1>`
     }
 }

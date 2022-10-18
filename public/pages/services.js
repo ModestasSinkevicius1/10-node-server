@@ -1,8 +1,7 @@
-class Services{
-    constructor(){
-    }
+import { PageTemplate } from "../../lib/PageTemplate.js";
 
-    getPage(){
+class Services extends PageTemplate{
+    contentHTML(){
         return `<h1>Somewhere</h1>
                 <h2>Page: Services</h2>`
     }

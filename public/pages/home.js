@@ -1,11 +1,12 @@
-class Home{
-    constructor(){
-    }
+import { PageTemplate } from '../../lib/PageTemplate.js';
 
-    getPage(){
-        return `<h1>Home</h1>
-                <h2>Page: Home</h2>
-                <img src="/img/logo.png" alt="Logo">`;
+class Home extends PageTemplate{
+    contentHTML(){
+        return `<main>
+                    <h1>Home</h1>
+                    <h2>Page: Home</h2>
+                    <img src="/img/logo.png" alt="Logo">
+                </main>`;
     }
 }
 
