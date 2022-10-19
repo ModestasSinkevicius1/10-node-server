@@ -6,7 +6,12 @@ class Home extends PageTemplate{
                     <h1>Home</h1>
                     <h2>Page: Home</h2>
                     <img src="/img/logo.png" alt="Logo">
+                    ${this.subContentHTML()}
                 </main>`;
+    }
+
+    subContentHTML(){
+        return `<h3>You're home</h3>`;
     }
 }
 
