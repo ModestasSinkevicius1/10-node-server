@@ -10,11 +10,11 @@ class LoginLoggedOut extends PageTemplate{
     contentHTML(){
         return `<main>
                     <h1>Login</h1>
-                    <form action="/api/user-login" method="POST">
+                    <form action="/api/login" method="POST">
                         <label>Email</label>
-                        <input name="email" type="email">
+                        <input name="email" data-validation="email" type="email">
                         <label>Password</label>
-                        <input name="password" type="password">
+                        <input name="password"  data-validation="password" type="password">
                         <button type="submit">Login</button>
                     </form>
                 </main>`;

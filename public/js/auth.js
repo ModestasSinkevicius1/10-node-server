@@ -8,12 +8,30 @@ buttonDOM.addEventListener('click', (event) =>{
     event.preventDefault();
 
     const formData = {};
+    const errorList = [];
 
     for(const inputDOM of inputsDOM) {
         const key = inputDOM.name;
         const value = inputDOM.value;
+        const validationMethod = inputDOM.dataset.validation;
         formData[key] = value;
+
+        const [error, msg] = IsValid[validationMethod](value);
+        if(error) {
+            errorList.push(msg);
+        }
     }
+    if(errorList.length){
+        console.log(errorList);
+    } else {
+        console.log("You're good!");
+        fetch(formDOM.action, {
+            method: 'POST',
+            body: JSON.stringify(formData),
+        });
+    }
+
+    
 
     //Validation
     const dataKeys = Object.keys(formData);
