@@ -26,7 +26,7 @@ buttonDOM.addEventListener('click', (event) =>{
     } else {
         console.log("You're good!");
         fetch(formDOM.action, {
-            method: 'POST',
+            method: formDOM.dataset.method,
             body: JSON.stringify(formData),
         });
     }

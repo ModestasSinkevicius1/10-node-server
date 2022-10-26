@@ -9,7 +9,7 @@ class Register extends PageTemplate{
     contentHTML(){
         return `<main>
                     <h1>Register</h1>
-                    <form action="/api/register" method="POST">
+                    <form action="/api/register" data-method="put">
                         <label>Username</label>
                         <input name="username" data-validation="username" type="text">
                         <label>Email</label>
