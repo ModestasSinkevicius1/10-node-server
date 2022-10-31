@@ -1,5 +1,6 @@
 import { file } from "../lib/file.js";
 import { IsValid } from "../lib/IsValid.js";
+import { utils } from "../lib/utils.js";
 
 const handler = {};
 
@@ -44,9 +45,16 @@ handler._handler.post = async (data) => {
         return 'Passwords don\'t match';
     }
 
-    const [error, msg] = await file.create('/users', email + '.json', payload);
+    const salt = 'f323kht32';
+    const [hashErr, hashMsg] = utils.hash(password + salt);
 
-    
+    if(hashErr) {
+        return 'Failed to create user';
+    }
+
+    payload.password = hashMsg;
+
+    const [error, msg] = await file.create('/users', email + '.json', payload);  
 
     return error ? 'Failed to create account' : msg;
 }

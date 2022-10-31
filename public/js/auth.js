@@ -24,7 +24,7 @@ buttonDOM.addEventListener('click', (event) =>{
     if(errorList.length){
         console.log(errorList);
     } else {
-        console.log("You're good!");
+        //console.log("You're good!");
         fetch(formDOM.action, {
             method: formDOM.dataset.method,
             body: JSON.stringify(formData),
