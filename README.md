@@ -6,5 +6,5 @@
 - Backend
 - API
 - Authorization
-- FTP (file transfering)
+- File management
 - Jest test
